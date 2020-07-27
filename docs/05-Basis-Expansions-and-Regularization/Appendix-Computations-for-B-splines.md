@@ -1,6 +1,6 @@
 # 附录
 
-| 原文   | [The Elements of Statistical Learning](../book/The Elements of Statistical Learning.pdf) |
+| 原文   | [The Elements of Statistical Learning](https://web.stanford.edu/~hastie/ElemStatLearn/printings/ESLII_print12.pdf) |
 | ---- | ---------------------------------------- |
 | 翻译   | szcf-weiya                               |
 | 时间   | 2017-10-22                    |
@@ -95,7 +95,7 @@ $$
 !!! note "weiya注：Ex. 5.2"
     目前完成了练习 5.2 的前三问的证明，还要两小问的证明待完成，具体证明过程见[Issue: Ex. 5.2](https://github.com/szcf-weiya/ESL-CN/issues/66)．练习 5.2 的结论如下：
 
-    - 当 $x\in [\tau_i, \tau_{i+M}], B_{i,M}(x)=0$;
+    - 当 $x\not\in [\tau_i, \tau_{i+M}], B_{i,M}(x)=0$;
     - 当 $x\in (\tau_i,\tau_{i+M}), B_{i,M}(x) > 0$;
     - $\forall x\in [\xi_0,\xi_{K+1}], \sum_1^{K+M}B_{i,M}(x)=1$;
     - $B_{i,M}$ 是 $[\xi_0,\xi_{K+1}]$ 上 order 为 $M$ 的分段多项式，断点仅为 $\xi_1,\ldots, \xi_K$;
@@ -116,6 +116,10 @@ $B$ 样条局部支撑有重要的计算应用，特别当结点数 $K$ 很大�
     ![](../img/05/matrix_operations_complexity.png)
 
     对于$N\times p$的设计矩阵$X$及$N\times 1$的响应变量向量$Y$，其最小二乘估计为$(X'X)^{-1}X'Y$，采用一般的Gauss-Jordan elimination的矩阵逆运算，则总复杂度为$O(Np^2+p^3)$，故$K+M$个变量的$N$个观测的最小二乘复杂度为$O(N(K+M)^2+(K+M)^3)$．
+
+!!! note "weiya 注：B 样条在 R, C++, Python 中的实现"
+    [这篇笔记](../notes/BS/bs.md)比较了 B 样条在 R，C++ 以及 Python 中的实现。
+    
 
 ## 光滑样条的计算
 
